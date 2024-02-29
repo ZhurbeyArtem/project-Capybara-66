@@ -1,30 +1,37 @@
-.hero {
-  padding-bottom: 40px;
+.contianer {
+  display: grid;
+  padding-bottom: 80px;
 }
 
-.mobileForm {
+.heading {
   margin-bottom: 40px;
 }
-.desktopForm {
-  display: none;
-}
 
-.contianer {
-  padding-bottom: 40px;
+@media (max-width: 1439px) {
+  .transactionForm {
+    margin-bottom: 40px;
+  }
 }
 
 @media (min-width: 1440px) {
   .contianer {
-    display: flex;
-    gap: 44px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 44px;
   }
-
-  .mobileForm {
-    display: none;
+  .heading {
+    grid-column-start: 1;
+    grid-row: 1;
   }
-
-  .desktopForm {
-    display: flex;
-    align-items: end;
+  .expensesAndIncomes {
+    grid-column-start: 1;
+    grid-row: 2;
+  }
+  .donut {
+    grid-column-start: 1;
+    grid-row: 3;
+  }
+  .transactionForm {
+    grid-column-start: 2;
+    grid-row: 1 / span 3;
   }
 }
