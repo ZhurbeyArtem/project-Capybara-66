@@ -26,6 +26,7 @@
   row-gap: 20px;
 
   max-width: 295px;
+  margin: 0 auto;
 }
 
 @media only screen and (min-width: 768px) {

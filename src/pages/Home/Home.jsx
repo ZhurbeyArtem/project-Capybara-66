@@ -8,33 +8,27 @@ const Home = () => {
   const { transactionsType } = useParams()
 
   return (
-    <div className={homeStyles.contianer}>
-      <div className={homeStyles.leftColumn}>
-        <section className={homeStyles.hero}>
-          <h1 className={welocomeStyles.mainTitle}>
-            {transactionsType === "expenses" ? "Expense" : "Incomes"} Log
-          </h1>
-          <p className={welocomeStyles.mainDescription}>
-            {transactionsType === "expenses"
-              ? "  Capture and organize every penny spent with ease! A clear view of your financial habits at your fingertips."
-              : "Track and celebrate every bit of earnings effortlessly! Gain insights into your total revenue in a snap."}
-          </p>
-        </section>
-        <section>
-          <h2 className='visually-hidden'>Incomes and expenses</h2>
-          <ExpensesAndIncomes />
-        </section>
-        <section className={homeStyles.mobileForm}>
-          <TransactionForm />
-        </section>
-        <section>
-          <ExpensesMain />
-        </section>
+    <section className={homeStyles.contianer}>
+      <div className={homeStyles.heading}>
+        <h1 className={welocomeStyles.mainTitle}>
+          {transactionsType === "expenses" ? "Expense" : "Incomes"} Log
+        </h1>
+        <p className={welocomeStyles.mainDescription}>
+          {transactionsType === "expenses"
+            ? "  Capture and organize every penny spent with ease! A clear view of your financial habits at your fingertips."
+            : "Track and celebrate every bit of earnings effortlessly! Gain insights into your total revenue in a snap."}
+        </p>
       </div>
-      <section className={homeStyles.desktopForm}>
+      <div className={homeStyles.expensesAndIncomes}>
+        <ExpensesAndIncomes />
+      </div>
+      <div className={homeStyles.transactionForm}>
         <TransactionForm />
-      </section>
-    </div>
+      </div>
+      <div className={homeStyles.donut}>
+        <ExpensesMain />
+      </div>
+    </section>
   )
 }
 
